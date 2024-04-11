@@ -4,7 +4,7 @@
   "description": "action nodejs jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --collect-coverage ---json --outputFile=output.json"
   },
   "repository": {
     "type": "git",
