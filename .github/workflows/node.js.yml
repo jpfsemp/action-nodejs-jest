@@ -30,6 +30,13 @@ jobs:
           files: |
               **/junit.xml
 
+      - name: Jest Coverage Comment
+        id: coverageComment
+        uses: MishaKav/jest-coverage-comment@main
+        with:
+          hide-comment: true
+          coverage-summary-path: ./coverage/coverage-summary.json
+
       - name: Report code coverage
         uses: zgosalvez/github-actions-report-lcov@v3
         with:
@@ -37,4 +44,5 @@ jobs:
           minimum-coverage: 0
           artifact-name: code-coverage-report
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: apps/my-first-app
           update-comment: true
