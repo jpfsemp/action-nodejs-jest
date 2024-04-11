@@ -1,10 +1,12 @@
 name: Node.js CI
 
-permissions:
-  contents: read
-  issues: read
-  checks: write
-  pull-requests: write
+# permissions:
+#   contents: read
+#   issues: read
+#   checks: write
+#   pull-requests: write
+
+permissions: write-all
 
 on: [push]
 
