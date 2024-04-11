@@ -1,0 +1,27 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "action nodejs jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpfsemp/action-nodejs-jest.git"
+  },
+  "keywords": [
+    "nodejs",
+    "jest",
+    "github-actions"
+  ],
+  "author": "João Paulo Ferreira de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpfsemp/action-nodejs-jest/issues"
+  },
+  "homepage": "https://github.com/jpfsemp/action-nodejs-jest#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
