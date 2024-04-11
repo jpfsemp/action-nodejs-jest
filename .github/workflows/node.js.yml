@@ -1,5 +1,11 @@
 name: Node.js CI
 
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+
 on: [push]
 
 jobs:
