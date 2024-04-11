@@ -28,6 +28,4 @@ jobs:
         if: always()
         with:
           files: |
-              **/*.xml
-              **/*.trx
-              **/*.json
+              output.json
