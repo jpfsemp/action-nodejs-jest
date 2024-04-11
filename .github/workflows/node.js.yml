@@ -39,11 +39,8 @@ jobs:
             # Upload the coverage directory from the repository
             path: './coverage'
 
-      - uses: mattallty/jest-github-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: artiomtr/jest-coverage-report-action@v2
         with:
-          coverage-comment: true
-
+            github-token: ${{ secrets.GITHUB_TOKEN }}
 
 
