@@ -36,3 +36,5 @@ jobs:
             name: covarage
             # Upload the coverage directory from the repository
             path: './coverage'
+
+      - uses: ArtiomTr/jest-coverage-report-action@v2
