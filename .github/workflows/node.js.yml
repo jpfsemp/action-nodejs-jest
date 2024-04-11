@@ -31,11 +31,19 @@ jobs:
               **/junit.xml
 
       - name: Jest Coverage Comment
-        id: coverageComment
         uses: MishaKav/jest-coverage-comment@main
         with:
-          hide-comment: true
           coverage-summary-path: ./coverage/coverage-summary.json
+          title: My Jest Coverage Comment
+          summary-title: My Summary Title
+          badge-title: Coverage
+          hide-comment: false
+          create-new-comment: false
+          hide-summary: false
+          junitxml-title: My JUnit Title
+          junitxml-path: ./coverage/junit.xml
+          coverage-title: My Coverage Title
+          coverage-path: ./coverage.txt
 
       - name: Report code coverage
         uses: zgosalvez/github-actions-report-lcov@v3
