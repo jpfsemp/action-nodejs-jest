@@ -43,16 +43,10 @@ jobs:
           files: |
               **/junit.xml
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-            name: covarage
-            path: './coverage'
-
       - uses: artiomtr/jest-coverage-report-action@v2
         with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
@@ -64,3 +58,10 @@ jobs:
             -Dsonar.projectKey=action-nodejs-test
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
             -Dsonar.testExecutionReportPaths=./coverage/test-report.xml
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: covarage
+            path: './coverage'
+
