@@ -31,12 +31,12 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: |
-              **/junit.xml
+      # - name: Publish Test Results
+      #   uses: EnricoMi/publish-unit-test-result-action@v2
+      #   if: always()
+      #   with:
+      #     files: |
+      #         **/*.xml
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -49,4 +49,14 @@ jobs:
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
 
-
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=jpfsemp
+            -Dsonar.projectKey=action-nodejs-test
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.testExecutionReportPaths=coverage/test-report.xml

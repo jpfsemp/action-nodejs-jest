@@ -4,11 +4,16 @@
   "description": "action nodejs jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest --collect-coverage --coverageReporters json-summary ---json --outputFile=output.json"
+    "test": "jest --coverage ./src"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jpfsemp/action-nodejs-jest.git"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-report.xml",
+    "indent": 4
   },
   "keywords": [
     "nodejs",
@@ -22,7 +27,9 @@
   },
   "homepage": "https://github.com/jpfsemp/action-nodejs-jest#readme",
   "devDependencies": {
-    "jest": "^29.7.0",
-    "jest-junit": "^16.0.0"
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "jest-sonar-reporter": "^2.0.0"
   }
 }
