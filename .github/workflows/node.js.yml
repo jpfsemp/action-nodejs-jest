@@ -58,3 +58,4 @@ jobs:
           args: >
             -Dsonar.organization=jpfsemp
             -Dsonar.projectKey=action-nodejs-test
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
