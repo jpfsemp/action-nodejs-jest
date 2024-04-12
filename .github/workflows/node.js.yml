@@ -34,7 +34,7 @@ jobs:
       - run: jest --coverage --reporters=default --reporters=jest-junit
       - run: > 
           ls
-          echo "================"
+          echo '================'
           ls coverage
       
       - name: Publish Test Results
