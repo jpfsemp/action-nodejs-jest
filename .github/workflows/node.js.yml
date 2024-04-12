@@ -27,10 +27,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+      - run: npm install --save-dev jest-junit && npm install jest --global
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm install jest --global && npm install jest-junit --global && jest --coverage -reporters=default --reporters=jest-junit ./src
-     # - run: jest --coverage -reporters=default --reporters=jest-junit ./src
+      - run: jest --coverage -reporters=default --reporters=jest-junit ./src
       - run: ls 
       
       - name: Publish Test Results
