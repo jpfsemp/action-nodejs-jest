@@ -29,7 +29,7 @@ jobs:
           node-version: '20.x'
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm install jest --global
+      - run: npm install jest --global && npm install jest-junit --global
       - run: jest --coverage -reporters=default --reporters=jest-junit ./src
       - run: ls 
       
