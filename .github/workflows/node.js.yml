@@ -32,7 +32,10 @@ jobs:
       - run: npm run build --if-present
       - run: npm install jest --global
       - run: jest --coverage --reporters=default --reporters=jest-junit
-      - run: ls coverage
+      - run: > 
+          ls
+          echo "================"
+          ls coverage
       
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
