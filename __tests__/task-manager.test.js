@@ -1,6 +1,6 @@
 // __tests__/task-manager.test.js
 
-const taskManager = require('../taskManager');
+const taskManager = require('../src/taskManager');
 
 test('addTask should add a task to the task list', () => {
   taskManager.addTask('Buy groceries');
