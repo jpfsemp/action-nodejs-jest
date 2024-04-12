@@ -34,7 +34,7 @@ jobs:
       - run: jest --coverage --reporters=default --reporters=jest-junit
       - run: |
           ls
-          echo "::add-mask::Mona The Octocat"
+          echo "========================"
           ls coverage
       
       - name: Publish Test Results
