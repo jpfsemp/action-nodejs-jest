@@ -27,15 +27,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
+
+      - run: npm install jest-junit --save-dev && npm install jest --global
+      
       - run: npm ci
-      - run: npm install jest-junit --save-dev 
+
       - run: npm run build --if-present
-      - run: npm install jest --global
+
       - run: jest --coverage --reporters=default --reporters=jest-junit
-      - run: |
-          ls
-          echo "========================"
-          ls coverage
       
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
@@ -48,17 +47,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
             name: covarage
-            # Upload the coverage directory from the repository
             path: './coverage'
 
       - uses: artiomtr/jest-coverage-report-action@v2
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v4
-        with:
-          report_paths: '**/junit.xml'
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
