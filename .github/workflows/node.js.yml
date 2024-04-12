@@ -31,7 +31,7 @@ jobs:
       - run: npm install jest-junit --save-dev 
       - run: npm run build --if-present
       - run: npm install jest --global
-      - run: jest --coverage -reporters=default --reporters=jest-junit ./src
+      - run: jest --coverage -reporters=default ./src
       - run: ls 
       
       - name: Publish Test Results
